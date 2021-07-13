@@ -1088,7 +1088,7 @@ QPushButton:pressed {
         </spacer>
        </item>
        <item row="12" column="0" colspan="3">
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="B_GRID_WOOD">
          <property name="minimumSize">
           <size>
            <width>0</width>

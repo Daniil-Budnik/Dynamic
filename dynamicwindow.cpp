@@ -24,7 +24,6 @@ DynamicWindow::DynamicWindow(QWidget *parent)
 
     // Задаем масштаб и обновляем графы
     on_B_Clear_clicked();
-
 }
 
 DynamicWindow::~DynamicWindow(){ delete ui; }
@@ -72,12 +71,12 @@ void DynamicWindow::GraphDesign(QCustomPlot *G)
 // Начать исследование
 void DynamicWindow::on_B_Begin_clicked(){
 
-    Y_OLD = ui->Ed_1->text().toDouble();    // Начальное условие
-    R_PARAMS = ui->Ed_2->text().toDouble(); // Параметр r
+    Y_OLD = ui->Ed_1->text().toDouble();                // Начальное условие
+    R_PARAMS = ui->Ed_2->text().toDouble();             // Параметр r
 
-    on_B_Clear_clicked();                   // Очищаем графы в начальный момент
-    Lameray_Parabol();                      // Генерируем параболу начальных условий
-    Lameray_Line();                         // Генерируем вспомогательную линию
+    on_B_Clear_clicked();                               // Очищаем графы в начальный момент
+    Lameray_Parabol();                                  // Генерируем параболу начальных условий
+    Lameray_Line();                                     // Генерируем вспомогательную линию
 
     // Первая точка (начальное условие)
     GraphDisplay->addGraph();
@@ -88,14 +87,14 @@ void DynamicWindow::on_B_Begin_clicked(){
     GraphFeigenbaum->replot();
     GraphFluctuations->replot();
 
-    EnablePlot = true;                      // Для проверка включения
+    EnablePlot = true;                                  // Для проверка включения
 }
 
 // Очистить графики
 void DynamicWindow::on_B_Clear_clicked(){
 
-    EnablePlot = false;                     // Для проверка включения
-    N = 0;                                  // Номер итерации
+    EnablePlot = false;                                 // Для проверка включения
+    N = 0;                                              // Номер итерации
     Y_N = 0;
 
     // Обнуление графов
